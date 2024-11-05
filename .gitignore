@@ -1,24 +1,63 @@
-# Compiled class file
+# Компилированные файлы классов
 *.class
 
-# Log file
+# Лог-файлы
 *.log
 
-# BlueJ files
-*.ctxt
+# Папка сгенерированных файлов
+/bin/
+build/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Файлы maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Package Files #
+# Файлы зависимостей
+dependency-reduced-pom.xml
+releases/
+resolved-dependencies/
+dependency/
+
+# Папка с данными кэша и временные файлы
+.cache/
+tmp/
+
+# Файлы конфигурации IDE
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+# Папка с библиотеками
+lib/
+
+# Файлы пакета
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Скрытые файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы конфигурации, содержащие секреты или ключи
+*.properties
+*.yaml
+*.yml
+*.env
+
+# SonarLint
+.sonarlint/
+
+# Папки и файлы кэша SonarLint для разных IDE
+/.idea/sonarlint/
+.vscode/sonarlint/
+.sonar/
