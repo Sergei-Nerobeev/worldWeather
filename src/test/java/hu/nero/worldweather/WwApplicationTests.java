@@ -1,4 +1,4 @@
-package hu.nero.worldWeather;
+package hu.nero.worldweather;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

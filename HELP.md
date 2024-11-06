@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'hu.nero.worldWeather ' is invalid and this project uses 'hu.nero.worldWeather' instead.
+* The original package name 'hu.nero.worldweather ' is invalid and this project uses 'hu.nero.worldweather' instead.
 
 # Getting Started
 
