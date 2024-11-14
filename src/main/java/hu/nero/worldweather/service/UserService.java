@@ -1,6 +1,8 @@
 package hu.nero.worldweather.service;
 
+import hu.nero.worldweather.repo.UserRepository;
 import hu.nero.worldweather.users.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,7 +11,14 @@ import java.util.List;
 @Service
 public class UserService {
 
-  public List<User> getAllUsers() {
+    private final UserRepository userRepository;
+
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public List<User> getAllUsers() { //todo all
     return List.of(
         new User(
             1L,
