@@ -1,12 +1,13 @@
 package hu.nero.worldweather.service;
 
 import hu.nero.worldweather.repo.UserRepository;
-import hu.nero.worldweather.users.User;
+import hu.nero.worldweather.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -38,5 +39,20 @@ public class UserService {
       throw new IllegalArgumentException("User not found by id=%s".formatted(id));
     }
     userRepository.deleteById(id);
+  }
+
+  @Transactional
+  public void updateUserEmail(Long id, String email) {
+    var user = userRepository.findById(id)
+                             .orElseThrow(() -> new IllegalArgumentException("User not found by id=%s".formatted(id)));
+    if (email != null
+        && !email.isEmpty()
+        && !email.equals(user.getEmail())) {
+      Optional<User> userOptional = userRepository.findByEmail(email);
+      if (userOptional.isPresent()) {
+        throw new IllegalArgumentException("Email already taken");
+      }
+      user.setEmail(email);
+    }
   }
 }

@@ -1,0 +1,17 @@
+#spring:
+#  application:
+#    name: worldWeather
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: 1234
+#
+#  jpa:
+#    hibernate:
+#    ddl-auto: create-update
+#    show-sql: true
+#
+#server:
+#  error:
+#    include-message: always

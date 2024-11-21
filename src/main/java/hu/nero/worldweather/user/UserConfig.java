@@ -1,4 +1,4 @@
-package hu.nero.worldweather.users;
+package hu.nero.worldweather.user;
 
 import hu.nero.worldweather.repo.UserRepository;
 import org.springframework.boot.CommandLineRunner;
