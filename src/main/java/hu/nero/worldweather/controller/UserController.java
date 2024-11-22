@@ -1,7 +1,7 @@
-package hu.nero.worldweather.controllers;
+package hu.nero.worldweather.controller;
 
 import hu.nero.worldweather.service.UserService;
-import hu.nero.worldweather.users.User;
+import hu.nero.worldweather.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +22,15 @@ public class UserController {
   public User createUser(@RequestBody User user) {
     return userService.createUser(user);
   }
+
   @DeleteMapping("/{userId}")
   public void deleteUser(@PathVariable("userId") Long id) {
     userService.deleteUser(id);
+  }
+
+  @PutMapping("/{userId}")
+  public void updateUser(
+      @PathVariable("userId") Long id, @RequestParam(value = "email", required = false) String email) {
+    userService.updateUserEmail(id, email);
   }
 }

@@ -1,6 +1,6 @@
 package hu.nero.worldweather.repo;
 
-import hu.nero.worldweather.users.User;
+import hu.nero.worldweather.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
